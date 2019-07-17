@@ -10,7 +10,7 @@ request({url,json:true},(error,{body})=>{
       callback('Unable to find location')
    }
    else{
-       callback(undefined,body.daily.data[0].summary+' The current temperature is '+body.currently.temperature+' There is '+body.currently.precipProbability+'% chance of rain')
+       callback(undefined,body.daily.data[0].summary+' The current temperature is '+body.currently.temperature+'. There is '+body.currently.precipProbability*100+'% chance of rain. The maximum temperature for the day is '+body.daily.data[0].temperatureMax+'. The minimum temperature for the day is '+body.daily.data[0].temperatureMin )
    }
 })}
 module.exports=forecast
